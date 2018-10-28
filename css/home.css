@@ -1,0 +1,310 @@
+
+
+@media only screen and (max-width: 600px) {
+    body {
+        overflow-x:hidden ;
+        overflow-y:scroll;
+        background-color: whitesmoke;
+    }
+    #upload_lunch_menu_view{
+        width: 100%;
+        padding-top: 0px;
+    }
+
+    .drop_menu{
+        padding-top: 15px;
+        padding-left: 200px;
+    }
+
+    .form_edit{
+        padding-left: 0px;
+    }
+
+    }
+
+
+@media only screen and (max-width: 992px) and (min-width: 600px){
+
+    body {
+        overflow-x:hidden ;
+        overflow-y:scroll;
+        background-color: whitesmoke;
+    }
+
+    #upload_lunch_menu_view {
+        width: 100%;
+        float: left;
+
+    }
+
+    .col-md-3.drop_menu{
+        padding-top: 15px;
+        padding-left: 20px;
+    }
+
+    .col-md-9.form_edit{
+        padding-top: 20px;
+        padding-left: 0px;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 600px){
+
+    body {
+        overflow-x:hidden ;
+        overflow-y:scroll;
+        background-color: whitesmoke;
+    }
+
+    #upload_lunch_menu_view {
+        width: 100%;
+    }
+
+    .col-md-3.drop_menu{
+        padding-top: 15px;
+        alignment: center;
+    }
+
+    .col-md-9.form_edit{
+        padding-top: 20px;
+        alignment: center;
+    }
+
+
+}
+
+
+@media only screen and (max-width: 380px) and (min-width: 300px){
+
+    body {
+        overflow-x: hidden;
+        overflow-y: scroll;
+        background-color: whitesmoke;
+    }
+
+    #upload_lunch_menu_view {
+        width: 120%;
+        float: left;
+
+
+    }
+    .col-md-3.drop_menu{
+        padding-top: 0px;
+        alignment: center;
+
+
+    }
+    .col-md-9.form_edit{
+        padding-top: 20px;
+        alignment: center;
+
+    }
+
+}
+
+
+
+body{
+    overflow-x:hidden ;
+    overflow-y: scroll;
+    background-color: whitesmoke;
+}
+
+.file_upload_text{
+
+    padding-left: 420px;
+    font-weight: bold;
+    color: coral;
+    font-family: Consolas;
+}
+
+[class*="col-md-"] {
+    width: 100%;
+}
+@media only screen and (min-width: 600px) {
+    /* For desktop: */
+    .col-md-1 {width: 8.33%;}
+    .col-md-2 {width: 16.66%;}
+    .col-md-3 {width: 25%;}
+    .col-md-4 {width: 33.33%;}
+    .col-md-5 {width: 41.66%;}
+    .col-md-6 {width: 50%;}
+    .col-md-7 {width: 58.33%;}
+    .col-md-8 {width: 66.66%;}
+    .col-md-9 {width: 75%;}
+    .col-md-10 {width: 83.33%;}
+    .col-md-11 {width: 91.66%;}
+    .col-md-12 {width: 100%;}
+}
+
+@media screen and (max-width: 600px) {
+    .col-md-3, .col-md-9, input[type=submit] {
+        width: 100%;
+        margin-top: 0;
+    }
+}
+
+
+.w3_engineers{
+    font-family: Consolas;
+    font-size: 20px;
+}
+.lunch_header{
+    font-family: Consolas;
+    font-weight: bold;
+    color: black;
+    text-align: center;
+
+}
+.upload_message{
+    font-family: Consolas;
+    font-weight: bold;
+    color: coral;
+    /*padding-left: 250px;*/
+    alignment: center;
+}
+
+.signup_form{
+    padding-top: 30px;
+    padding-left: 200px;
+}
+.logout_btn{
+    background: #0D3349;
+}
+#button-pos{
+    padding-right: auto;
+
+}
+
+.lunch_image{
+    width: 300px;
+    height: 300px;
+}
+
+.button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: rebeccapurple;
+    font-family: Consolas;
+    font-weight: bold;
+    padding: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 18px;
+    margin: 8px 2px;
+    cursor: pointer;
+}
+
+.lunch_button {border-radius: 12px;}
+.snacks_button {border-radius: 12px;}
+.snacks_text{
+    float: right;
+}
+.lunch_image{
+    width: 200px;
+    height: 300px;
+}
+
+.left.carousel-control, .right.carousel-control{
+    background: none;
+}
+
+.carousel-fade .carousel-inner .item {
+    opacity: 0;
+    transition-property: opacity;
+}
+
+.carousel-fade .carousel-inner .active {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-inner .active.left,
+.carousel-fade .carousel-inner .active.right {
+    left: 0;
+    opacity: 0;
+    z-index: 1;
+}
+
+.carousel-fade .carousel-inner .next.left,
+.carousel-fade .carousel-inner .prev.right {
+    opacity: 1;
+}
+
+.carousel-fade .carousel-control {
+    z-index: 2;
+}
+footer{
+    margin-top: 340px;
+    width: 100%;
+    height: 100px;
+    background-color:#0D3349;
+}
+.notification{
+
+    color: crimson;
+    font-family: Consolas;
+    font-weight: bold;
+    font-size: 20px;
+}
+.lunch_item{
+    font-family: Consolas;
+    font-size: 20px;
+    font-weight: bold;
+    /*padding-left: 120px;*/
+
+}
+
+.drop_menu{
+    padding-top: 15px;
+    padding-left: 200px;
+}
+
+.drop_menu1{
+    padding-top: 30px;
+    float: left;
+
+}
+
+.form_edit{
+    padding-left: 200px;
+
+}
+.inputfile {
+    width: 0.1px;
+    height: 0.1px;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: -1;
+}
+.inputfile + label {
+    font-size: 1.25em;
+    font-weight: 700;
+    color: white;
+    background-color: black;
+    display: inline-block;
+}
+
+.inputfile:focus + label,
+.inputfile + label:hover {
+    background-color: navy;
+}
+.inputfile + label {
+    cursor: pointer; /* "hand" cursor */
+}
+.inputfile:focus + label {
+    outline: 1px dotted #000;
+    outline: -webkit-focus-ring-color auto 5px;
+}
+
+.view_menu{
+    padding-left: 300px;
+}
+.view_menu_text{
+    padding-left: 80px;
+    padding-top: 5px;
+}
