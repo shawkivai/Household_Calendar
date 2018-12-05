@@ -1,7 +1,7 @@
 <?php
 require_once('DatabaseConnection.php');
 session_start();
-$sql = "SELECT id, title, start, end, color FROM events ";
+$sql = "SELECT id, title, start, end, color FROM tbl_mealplan";
 $req = $DBcon->prepare($sql);
 $req->execute();
 $events = $req->fetchAll();
@@ -62,10 +62,7 @@ $events = $req->fetchAll();
                         <a href="calendar_dashboard.php">Event Calender</a>
 										</li>
 										<li>
-                        <a href="meal_plan_calendar.php">Meal Plan Schedule</a>
-										</li>
-										<li>
-                        <a href="chores_calendar.php">Chores Schedule</a>
+                        <a href="calendar_dashboard.php">Chores Schedule</a>
                     </li>
                 </ul>
 
@@ -97,11 +94,11 @@ $events = $req->fetchAll();
 
         <div class="row">
             <div class="col-lg-12 text-center">
-								<h1>Events Calendar for Household</h1>
+								<h1>Meal-Plan Calendar for Household</h1>
 								<?php if($_SESSION['user'] === 'admin') {?>
-									<p class="lead">You can create events, manage events and delete events</p>	
+									<p class="lead">You can create Meal Plan, manage Meal Plan and delete Meal Plan</p>	
 								<?php } else{?>
-									<p>Family Members can only see the events</p>
+									<p>Family Members can only see the Meal Plan</p>
 								<?php } ?>
                 <div id="calendar" class="col-centered">
                 </div>
@@ -114,7 +111,7 @@ $events = $req->fetchAll();
 		<div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
-			<form class="form-horizontal" method="POST" action="service/addEvent.php">
+			<form class="form-horizontal" method="POST" action="service/addMealplan.php">
 			
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -173,7 +170,7 @@ $events = $req->fetchAll();
 		<div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
-			<form class="form-horizontal" method="POST" action="service/editEventTitle.php">
+			<form class="form-horizontal" method="POST" action="service/editMealplanTitle.php">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<h4 class="modal-title" id="myModalLabel">Edit Event</h4>
@@ -324,7 +321,7 @@ $events = $req->fetchAll();
 			Event[2] = end;
 			
 			$.ajax({
-			 url: 'service/editEventDate.php',
+			 url: 'service/editMealplanDate.php',
 			 type: "POST",
 			 data: {Event:Event},
 			 success: function(rep) {

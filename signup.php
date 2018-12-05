@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>W3 Lunch</title>
+    <title>Household Management</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -16,22 +16,22 @@
 <nav class="navbar navbar-inverse">
     <div class="container-fluid">
         <div class="navbar-header">
-            <a class="navbar-brand w3_engineers" href="index.php">W3 Engineers Ltd.</a>
+            <a class="navbar-brand w3_engineers" href="index.php">Household Schedular</a>
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Home</a></li>
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+            <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
                 <ul class="dropdown-menu">
                     <li><a href="#">Page 1-1</a></li>
                     <li><a href="#">Page 1-2</a></li>
                     <li><a href="#">Page 1-3</a></li>
                 </ul>
             </li>
-            <li><a href="#">Page 2</a></li>
+            <li><a href="#">Page 2</a></li> -->
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="sign_up.php"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+            <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
         </ul>
     </div>
 </nav>
@@ -46,22 +46,41 @@
         <form class="form-horizontal" action="db_signup.php" method="post">
 
             <div class="form-group">
-                <label class="control-label col-sm-4">First Name</label>
+                <label class="control-label col-sm-4">Family Name</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="pwd" placeholder="first name" name="first_name">
+                    <input type="text" class="form-control" id="pwd" placeholder="family name" name="family_name" required>
                 </div>
             </div>
 
             <div class="form-group">
-                <label class="control-label col-sm-4"> Last Name</label>
+                <label class="control-label col-sm-4">Family Status</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="email" placeholder="last name" name="last_name">
+                <select class="form-control" name = "family_status">
+                    <option value="happy">Happy</option>
+                    <option value= "sad">Sad</option>
+                </select>
                 </div>
             </div>
+
+
             <div class="form-group">
-                <label class="control-label col-sm-4" for="email">User Role</label>
+                <label class="control-label col-sm-4">Full Name</label>
                 <div class="col-sm-4">
-                <select class="form-control" name = "user_role">
+                    <input type="text" class="form-control" id="full_name" placeholder="last name" name="full_name" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-4">Phone Number</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" id="phone_no" placeholder="Phone Number" name="phone_number">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-sm-4">User Role</label>
+                <div class="col-sm-4">
+                <select class="form-control" name = "user_role" required>
                     <option value="parents">Parents</option>
                     <option value= "children">Children</option>
                 </select>
@@ -71,14 +90,14 @@
             <div class="form-group">
                 <label class="control-label col-sm-4" for="email">username</label>
                 <div class="col-sm-4">
-                    <input type="text" class="form-control" id="email" placeholder="username" name="username">
+                    <input type="text" class="form-control" id="email" placeholder="username" name="username" required>
                 </div>
             </div>
 
             <div class="form-group">
                 <label class="control-label col-sm-4" for="email">Password</label>
                 <div class="col-sm-4">
-                    <input type="password" class="form-control" id="email" placeholder="Enter password" name="password">
+                    <input type="password" class="form-control" id="email" placeholder="Enter password" name="password" required>
                 </div>
             </div>
 

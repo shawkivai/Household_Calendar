@@ -26,7 +26,7 @@ if(isset($_POST['signup'])){
     $insert_data = $singnup_data->execute();
 
     if($insert_data) {
-        echo "<script> window.open('login.php','_self')</script>";
+        echo "<script> window.open('index.php','_self')</script>";
         exit();
     }
     else {
