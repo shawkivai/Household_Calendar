@@ -15,7 +15,7 @@ $current_user = $_SESSION['user'];
 <!------ Include the above in your HEAD tag ---------->
 <head>
     <meta charset="utf-8" />
-    <title>Bootstrap Example</title>
+    <title><?php echo $result['full_name'] ?> Profil</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -40,7 +40,7 @@ $current_user = $_SESSION['user'];
           <form class="form" action="update_profile.php" method="POST" id="registrationForm" enctype="multipart/form-data">
             <div class="text-center">
                 <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar" id="profile_avatar">
-                <h6>Upload a different photo...</h6>
+                <h6>Upload et billede...</h6>
                 <input type="file" name = "image" class="text-center center-block file-upload" onchange="readURL(this);">
             </div></hr><br>
                 </div><!--/col-3-->
@@ -51,14 +51,14 @@ $current_user = $_SESSION['user'];
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="first_name"><h4>Full Name</h4></label>
+                              <label for="first_name"><h4>Fulde navn</h4></label>
                               <input type="text" class="form-control" name="full_name" id="first_name" placeholder="" title="enter your first name if any." value="<?php echo $result['full_name']?>">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                            <label for="family_name"><h4>Family Name</h4></label>
+                            <label for="family_name"><h4> Familie navn</h4></label>
                               <input type="text" class="form-control" name="family_name" id="last_name" placeholder="last name" title="enter your last name if any." value="<?php echo $result['family_name']?>">
                           </div>
                       </div>
@@ -66,50 +66,50 @@ $current_user = $_SESSION['user'];
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="phone"><h4>Phone</h4></label>
+                              <label for="phone"><h4>Telefonnummer</h4></label>
                               <input type="text" class="form-control" name="phone_number" id="phone" placeholder="enter phone" title="enter your phone number if any." value="<?php echo $result['phone_number']?>">
                           </div>
                       </div>
           
                       <div class="form-group">
                           <div class="col-xs-6">
-                             <label for="email"><h4>Email</h4></label>
+                             <label for="email"><h4>Email adresse</h4></label>
                               <input type="email" class="form-control" name="email" id="mobile" placeholder="enter mobile number" title="enter your mobile number if any." value="<?php echo $result['email']?>">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="email"><h4>Family Status</h4></label>
+                              <label for="email"><h4> Familie status</h4></label>
                               <input type="text" class="form-control" name="family_status" id="email" placeholder="you@email.com" title="enter your email." value="<?php echo $result['family_status']?>">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="email"><h4>User Role</h4></label>
+                              <label for="email"><h4> Bruger rolle</h4></label>
                               <input type="text" class="form-control" name="user_role" placeholder="somewhere" title="enter a location" value="<?php echo $result['user_role']?>">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                              <label for="password"><h4>Old Password</h4></label>
+                              <label for="password"><h4> Gammelt kodeord</h4></label>
                               <input type="password" class="form-control" name="password" id="password" placeholder="password" title="enter your password." value="<?php echo $result['password']?>">
                           </div>
                       </div>
                       <div class="form-group">
                           
                           <div class="col-xs-6">
-                            <label for="password2"><h4>New Password</h4></label>
+                            <label for="password2"><h4> nyt kodeord</h4></label>
                               <input type="password" class="form-control" name="new_password" id="password2" placeholder="change Password" title="enter your password2.">
                           </div>
                       </div>
                       <div class="form-group">
                            <div class="col-xs-12">
                                 <br>
-                              	<button class="btn btn-lg btn-success" type="submit" name="profile"><i class="glyphicon glyphicon-ok-sign"></i> Save</button>
-                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Reset</button>
+                              	<button class="btn btn-lg btn-success" type="submit" name="profile"><i class="glyphicon glyphicon-ok-sign"></i> Gemme</button>
+                               	<button class="btn btn-lg" type="reset"><i class="glyphicon glyphicon-repeat"></i> Nulstil</button>
                             </div>
                       </div>
               	</form>   

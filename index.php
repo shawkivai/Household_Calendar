@@ -46,7 +46,7 @@
 	<div class="top-nav">
 		<div class="container">
 			<nav class="navbar navbar-expand-lg navbar-light">
-				<a class="navbar-brand text-uppercase" href="index.html">Household Manager</a>
+				<a class="navbar-brand text-uppercase" href="index.html">Husholdningschef</a>
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 				<span class="navbar-toggler-icon"></span>
 				</button>
@@ -54,17 +54,17 @@
 				<div class="collapse navbar-collapse justify-content-center pr-md-4" id="navbarSupportedContent">
 					<ul class="navbar-nav ml-auto">
 						<li class="nav-item">
-							<a class="nav-link active" href="index.html">Home <span class="sr-only">(current)</span></a>
+							<a class="nav-link active" href="/">Hjem <span class="sr-only">(current)</span></a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="services.html">Services</a>
+							<a class="nav-link" href="#">Services</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="login.php">Log In</a>
+							<a class="nav-link" href="login.php">Log på</a>
 						</li>
 
 						<li class="nav-item">
-							<a class="nav-link" href="signup.php">Sign Up</a>
+							<a class="nav-link" href="signup.php">Tilmelde</a>
 						</li>
 						
 						<!-- search --->
@@ -102,7 +102,7 @@
 					<div class="dot">
 						<div class="container">
 							<div class="slider_banner_info_w3ls text-center">
-								<h1 class="text-uppercase">Meal Plan</h1>
+								<h1 class="text-uppercase">Madplan</h1>
 							</div>
 						</div>
 					</div>
@@ -113,7 +113,7 @@
 					<div class="dot">
 						<div class="container">
 							<div class="slider_banner_info_w3ls text-center">
-								<h2 class="text-uppercase">Events</h2>
+								<h2 class="text-uppercase">Begivenheder</h2>
 							</div>
 						</div>
 					</div>
@@ -124,7 +124,7 @@
 					<div class="dot">
 						<div class="container">
 							<div class="slider_banner_info_w3ls text-center">
-								<h4 class="text-uppercase">Chores</h4>
+								<h4 class="text-uppercase">pligter</h4>
 							</div>
 						</div>
 					</div>
@@ -139,7 +139,7 @@
 <!-- About us -->
 <section class="about py-5">
 	<div class="container">
-		<h3 class="heading text-center text-uppercase mb-5"> What We Do </h3>
+		<h3 class="heading text-center text-uppercase mb-5"> HVAD VI GØR </h3>
 		<p class="aboutpara text-center">Maecenas ac euismod eros. Aliquam a suscipit nibh. Aliquam iaculis erat porta mauris fermentum lacinia. Donec posuere a massa sit amet sagittis. Nam ut nulla a ligula dictum imperdiet nec ut mauris. Etiam ipsum ipsum, ultrices id nisi ac, pretium efficitur ex. Vestibulum a maximus magna, sit amet ultrices nisi. In laoreet placerat turpis.</p>
 		
 		<div class="row about_grids mt-5">
@@ -211,7 +211,7 @@
 <!-- How we Work -->
 <section class="work py-5">
 	<div class="container">
-	<h3 class="heading text-center text-uppercase mb-5"> How We Work </h3>
+	<h3 class="heading text-center text-uppercase mb-5"> Hvordan vi arbejder </h3>
 		<div class="row">
 			<div class="col-lg-3 col-sm-6 grid1">
 				<img src="assets/images/1.png" alt="" class="img-fluid mb-3">
@@ -373,13 +373,13 @@
 <!-- Newsletter -->
 <section class="newsletter text-center py-5">
 	<div class="container">
-		<h3 class="heading text-center text-uppercase mb-5"> Newsletter </h3>
+		<h3 class="heading text-center text-uppercase mb-5"> NYHEDSBREV </h3>
 		
 		<div class="subscribe_inner">
 			<p class="mb-4">Maecenas ac euismod eros. Aliquam a suscipit nibh. Aliquam iaculis erat porta mauris fermentum lacinia. </p>
 			<form action="#" method="post">
-				<input type="email" placeholder="Enter your email address" required="">
-				<input type="submit" class="mt-3" value="Subscribe">
+				<input type="email" placeholder="Indtast din e-mailadresse" required>
+				<input type="submit" class="mt-3" value="Tilmeld">
 			</form>
 			<!-- <div class="social mt-5">
 				<h4>Follow us</h4>
@@ -402,7 +402,7 @@
 	<div class="container py-3 py-md-4">
 		<div class="row">
 			<div class="col-lg-5 col-md-12">
-				<p class="py-lg-4">© 2018 Cafe In. All Rights Reserved</p>
+				<p class="py-lg-4">© 2018 Cafe In. Alle rettigheder forbeholdes</p>
 			</div>
 			<div class="col-lg-5 col-md-12">
 				<ul class="py-lg-4">

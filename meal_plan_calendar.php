@@ -15,7 +15,7 @@ $events = $req->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Bare - Start Bootstrap Template</title>
+    <title>Husholdningschef</title>
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 	<!-- FullCalendar -->
@@ -50,19 +50,19 @@ $events = $req->fetchAll();
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="calendar_dashboard.php">Household Schedular</a>
+                <a class="navbar-brand" href="calendar_dashboard.php">Husholdningschef</a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="user_profile.php">Profile</a>
+                        <a href="user_profile.php">Profil</a>
 										</li>
 										<li>
-                        <a href="calendar_dashboard.php">Event Calender</a>
+                        <a href="calendar_dashboard.php">Event kalender</a>
 										</li>
 										<li>
-                        <a href="calendar_dashboard.php">Chores Schedule</a>
+                        <a href="calendar_dashboard.php">Chores Kalender</a>
                     </li>
                 </ul>
 
@@ -78,7 +78,7 @@ $events = $req->fetchAll();
 
                 </a>
                 <ul class="dropdown-menu">
-                    <li><a href="logout.php">Logout</a></li>
+                    <li><a href="logout.php">Log ud</a></li>
                 </ul>
             </li>
         </ul>
@@ -94,11 +94,11 @@ $events = $req->fetchAll();
 
         <div class="row">
             <div class="col-lg-12 text-center">
-								<h1>Meal-Plan Calendar for Household</h1>
+								<h1>Måltidskalender for husholdningen</h1>
 								<?php if($_SESSION['user'] === 'admin') {?>
-									<p class="lead">You can create Meal Plan, manage Meal Plan and delete Meal Plan</p>	
+									<p class="lead">Du kan oprette måltider, administrere måltider og slette måltider</p>	
 								<?php } else{?>
-									<p>Family Members can only see the Meal Plan</p>
+									<p>Familiemedlemmer kan kun se måltiderne</p>
 								<?php } ?>
                 <div id="calendar" class="col-centered">
                 </div>
@@ -115,40 +115,40 @@ $events = $req->fetchAll();
 			
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Add Event</h4>
+				<h4 class="modal-title" id="myModalLabel">Tilføj måltider</h4>
 			  </div>
 			  <div class="modal-body">
 				
 				  <div class="form-group">
-					<label for="title" class="col-sm-2 control-label">Title</label>
+					<label for="title" class="col-sm-2 control-label">Titel</label>
 					<div class="col-sm-10">
-					  <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+					  <input type="text" name="title" class="form-control" id="title" placeholder="Titel">
 					</div>
 				  </div>
 				  <div class="form-group">
-					<label for="color" class="col-sm-2 control-label">Color</label>
+					<label for="color" class="col-sm-2 control-label">Farve</label>
 					<div class="col-sm-10">
 					  <select name="color" class="form-control" id="color">
-						  <option value="">Choose</option>
-						  <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
-						  <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
-						  <option style="color:#008000;" value="#008000">&#9724; Green</option>						  
-						  <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
-						  <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
-						  <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
-						  <option style="color:#000;" value="#000">&#9724; Black</option>
+                            <option value="">Vælge</option>
+						  <option style="color:#0071c5;" value="#0071c5">&#9724; Mørkeblå</option>
+						  <option style="color:#40E0D0;" value="#40E0D0">&#9724; turkis</option>
+						  <option style="color:#008000;" value="#008000">&#9724; Grøn</option>						  
+						  <option style="color:#FFD700;" value="#FFD700">&#9724; Gul</option>
+						  <option style="color:#FF8C00;" value="#FF8C00">&#9724; orange</option>
+						  <option style="color:#FF0000;" value="#FF0000">&#9724; Rød</option>
+						  <option style="color:#000;" value="#000">&#9724; Sort</option>
 						  
 						</select>
 					</div>
 				  </div>
 				  <div class="form-group">
-					<label for="start" class="col-sm-2 control-label">Start date</label>
+					<label for="start" class="col-sm-2 control-label">Start dato</label>
 					<div class="col-sm-10">
 					  <input type="date" name="start" class="form-control" id="start">
 					</div>
 				  </div>
 				  <div class="form-group">
-					<label for="end" class="col-sm-2 control-label">End date</label>
+					<label for="end" class="col-sm-2 control-label">Slutdato</label>
 					<div class="col-sm-10">
 					  <input type="date" name="end" class="form-control" id="end">
 					</div>
@@ -156,8 +156,8 @@ $events = $req->fetchAll();
 				
 			  </div>
 			  <div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="submit" class="btn btn-primary">Save changes</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Tæt</button>
+				<button type="submit" class="btn btn-primary">Gem ændringer</button>
 			  </div>
 			</form>
 			</div>
@@ -173,28 +173,28 @@ $events = $req->fetchAll();
 			<form class="form-horizontal" method="POST" action="service/editMealplanTitle.php">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Edit Event</h4>
+				<h4 class="modal-title" id="myModalLabel">Rediger måltidsplan</h4>
 			  </div>
 			  <div class="modal-body">
 				
 				  <div class="form-group">
-					<label for="title" class="col-sm-2 control-label">Title</label>
+					<label for="title" class="col-sm-2 control-label">Titel</label>
 					<div class="col-sm-10">
-					  <input type="text" name="title" class="form-control" id="title" placeholder="Title">
+					  <input type="text" name="title" class="form-control" id="title" placeholder="Titel">
 					</div>
 				  </div>
 				  <div class="form-group">
-					<label for="color" class="col-sm-2 control-label">Color</label>
+					<label for="color" class="col-sm-2 control-label">Farve</label>
 					<div class="col-sm-10">
 					  <select name="color" class="form-control" id="color">
-						  <option value="">Choose</option>
-						  <option style="color:#0071c5;" value="#0071c5">&#9724; Dark blue</option>
-						  <option style="color:#40E0D0;" value="#40E0D0">&#9724; Turquoise</option>
-						  <option style="color:#008000;" value="#008000">&#9724; Green</option>						  
-						  <option style="color:#FFD700;" value="#FFD700">&#9724; Yellow</option>
-						  <option style="color:#FF8C00;" value="#FF8C00">&#9724; Orange</option>
-						  <option style="color:#FF0000;" value="#FF0000">&#9724; Red</option>
-						  <option style="color:#000;" value="#000">&#9724; Black</option>
+                            <option value="">Vælge</option>
+						  <option style="color:#0071c5;" value="#0071c5">&#9724; Mørkeblå</option>
+						  <option style="color:#40E0D0;" value="#40E0D0">&#9724; turkis</option>
+						  <option style="color:#008000;" value="#008000">&#9724; Grøn</option>						  
+						  <option style="color:#FFD700;" value="#FFD700">&#9724; Gul</option>
+						  <option style="color:#FF8C00;" value="#FF8C00">&#9724; orange</option>
+						  <option style="color:#FF0000;" value="#FF0000">&#9724; Rød</option>
+						  <option style="color:#000;" value="#000">&#9724; Sort</option>
 						  
 						</select>
 					</div>
@@ -202,7 +202,7 @@ $events = $req->fetchAll();
 				    <div class="form-group"> 
 						<div class="col-sm-offset-2 col-sm-10">
 						  <div class="checkbox">
-							<label class="text-danger"><input type="checkbox"  name="delete"> Delete event</label>
+							<label class="text-danger"><input type="checkbox"  name="delete"> Slet måltider</label>
 						  </div>
 						</div>
 					</div>
@@ -212,8 +212,8 @@ $events = $req->fetchAll();
 				
 			  </div>
 			  <div class="modal-footer">
-				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="submit" class="btn btn-primary">Save changes</button>
+				<button type="button" class="btn btn-default" data-dismiss="modal">Tæt</button>
+				<button type="submit" class="btn btn-primary">Gem ændringer</button>
 			  </div>
 			</form>
 			</div>

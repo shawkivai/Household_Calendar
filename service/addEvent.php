@@ -14,8 +14,6 @@ if (isset($_POST['title']) && isset($_POST['start']) && isset($_POST['end']) && 
 	//$req = $DBcon->prepare($sql);
 	//$req->execute();
 	
-	echo $sql;
-	
 	$query = $DBcon->prepare( $sql );
 	if ($query == false) {
 	 print_r($DBcon->errorInfo());

@@ -1,5 +1,5 @@
 <?php
-$siteUrl = 'https://www.allrecipes.com/recipe/17481/simple-white-cake/';
+$siteUrl = 'https://www.norsmor.dk/kartoffelsuppe-med-bacon-og-pesto/';
 $requestUrl = 'https://opengraph.io/api/1.1/site/' . urlencode($siteUrl);
  
 // Make sure you include your free app_id here!  No CC required

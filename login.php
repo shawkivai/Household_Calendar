@@ -12,7 +12,7 @@ if(isset($_SESSION['user'])){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>W3 Lunch</title>
+    <title>Husholdningschef</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -31,11 +31,11 @@ if(isset($_SESSION['user'])){
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a class="navbar-brand w3_engineers" href="index.php">Household Schedular</a>
+            <a class="navbar-brand w3_engineers" href="index.php">Husholdningschef</a>
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav navbar-right">
-                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span> Log på</a></li>
             </ul>
         </div>
     </div>
@@ -45,7 +45,7 @@ if(isset($_SESSION['user'])){
 <div class="container">
     <div class="row">
 
-        <center><h1 class="lunch_header">Welcome to Household Schedular</h1></center></div>
+        <center><h1 class="lunch_header">Velkommen til husholdningschef</h1></center></div>
     </div>
 
 
@@ -55,17 +55,17 @@ if(isset($_SESSION['user'])){
         <p id="profile-name" class="profile-name-card"></p>
         <form class="form-signin" method="post" action="login_check.php">
             <span id="reauth-email" class="reauth-email"></span>
-            <input type="text" id="" class="form-control" placeholder="username" name="username" required autofocus>
-            <input type="password" id="inputPassword" class="form-control" placeholder="password" name="password" required>
+            <input type="text" id="" class="form-control" placeholder="brugernavn" name="username" required autofocus>
+            <input type="password" id="inputPassword" class="form-control" placeholder="adgangskode" name="password" required>
             <div id="remember" class="checkbox">
                 <label>
-                    <input type="checkbox" value="remember-me"> Remember me
+                    <input type="checkbox" value="remember-me"> Husk mig
                 </label>
             </div>
-            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="login">Login</button>
+            <button class="btn btn-lg btn-primary btn-block btn-signin" type="submit" name="login">Log på</button>
         </form><!-- /form -->
         <a href="signup.php" class="forgot-password">
-            Create an Account
+            Opret en konto
         </a>
     </div><!-- /card-container -->
 </div>
