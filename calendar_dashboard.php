@@ -67,6 +67,9 @@ $events = $req->fetchAll();
 										<li>
                         <a href="chores_calendar.php">Chores Kalender</a>
                     </li>
+										<li>
+                        <a href="shopping_list.php">Shopping list</a>
+                    </li>
                 </ul>
 
 
