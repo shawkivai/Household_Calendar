@@ -38,12 +38,12 @@
 
     <div class="container">
 
-    <h1 class="lunch_header">Tilmeld dig venligst</h1>
+    <h1 class="lunch_header"> Søg opskrift</h1>
 
     <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
 
     <div class="row signup_form">
-    <form class="form-horizontal" action="openCart_service.php" method="post">
+    <form class="form-horizontal" action="shopping_list.php" method="post">
 
         <div class="form-group">
             <label class="control-label col-sm-4">Recepie Name</label>
@@ -54,9 +54,41 @@
 
         <div class="form-group">
             <div class="col-sm-offset-4 col-sm-4">
-                <button type="submit" class="btn btn-info" name="signup">done</button>
+                <button type="submit" class="btn btn-info" name="submit">done</button>
             </div>
         </div>
     </form>
+
+    <?php
+if(isset($_POST['submit'])){
+        $recepie_name = $_POST['recepie_name'];
+
+        $siteUrl = 'https://www.norsmor.dk/'.$recepie_name.'/';
+        $requestUrl = 'https://opengraph.io/api/1.1/site/' . urlencode($siteUrl);
+        
+        // Make sure you include your free app_id here!  No CC required
+        $requestUrl = $requestUrl . '?app_id=5c0c33ba87313612004c4d3a';
+        
+        $siteInformationJSON = file_get_contents($requestUrl);
+        $siteInformation = json_decode($siteInformationJSON, true);
+
+        // echo '<pre>';
+        // print_r ($siteInformation);
+        // echo '</pre>';
+        
+        $title = $siteInformation['hybridGraph']['title'];
+        $description =  $siteInformation['hybridGraph']['description'] ;
+        $logo = $siteInformation['hybridGraph']['image'] ;
+?>
+		<div class="row">
+			<div class="col-md-6 list-item">
+				<img src="<?php echo $logo ?>" alt="" class="img-fluid" height="250px" width="350px" style="padding-left:100px"/>
+				<h3 class=""><?php echo $title ?></h3>
+				<p class=""><?php echo $description ?></p>
+				<!-- <a href="#" class="text-capitalize">Read more <span class="fas fa-long-arrow-alt-right"></span></a> -->
+			</div>
+	
+		</div>
+<?php } ?>
 </body>
 </html>
