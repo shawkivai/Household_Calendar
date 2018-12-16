@@ -53,7 +53,7 @@ if(isset($_SESSION['user'])){
         <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
         <img class="card_image" src="images/calendar_logo.png">
         <p id="profile-name" class="profile-name-card"></p>
-        <form class="form-signin" method="post" action="login_check.php">
+        <form class="form-signin" method="post" action="service/login_check.php">
             <span id="reauth-email" class="reauth-email"></span>
             <input type="text" id="" class="form-control" placeholder="brugernavn" name="username" required autofocus>
             <input type="password" id="inputPassword" class="form-control" placeholder="adgangskode" name="password" required>

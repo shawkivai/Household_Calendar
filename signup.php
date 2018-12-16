@@ -1,3 +1,11 @@
+<?php 
+    require ("service/DatabaseConnection.php");
+    $query = "select DISTINCT family_name from tbl_user";
+    $req = $DBcon->prepare($query);
+    $req->execute();
+    $family_name = $req->fetchall(PDO::FETCH_ASSOC);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,13 +55,25 @@
             <form class="form-horizontal" action="db_signup.php" method="post">
 
                 <div class="form-group">
-                    <label class="control-label col-sm-4">Familie navn</label>
+                            OR
+                    <label class="control-label col-sm-4">skabe familie</label>
                     <div class="col-sm-4">
                         <div class="">
-                            <input type="text" class="form-control" id="family_name" placeholder="Familie navn" name="family_name" required>
+                            <input type="text" class="form-control" id="family_name" placeholder="Familie navn" name="family_name">
                             <span></span>
                         </div>
+                    </div>
                 </div>
+                <div class="form-group">
+                    <label class="control-label col-sm-4">Deltag i familie</label>
+                    <div class="col-sm-4">
+                    <select class="form-control" name = "join_family">
+                        <option>vælg familie</option>
+                        <?php foreach($family_name as $f_name) {?> 
+                            <option value="<?php echo $f_name['family_name']?>"><?php echo $f_name['family_name']?></option>
+                        <?php } ?>
+                    </select>
+                    </div>
                 </div>
 
                 <div class="form-group">
@@ -85,7 +105,7 @@
                     <label class="control-label col-sm-4">Bruger rolle</label>
                     <div class="col-sm-4">
                     <select class="form-control" name = "user_role" required>
-                        <option value="parents">Forældre</option>
+                        <option value="parent">Forældre</option>
                         <option value= "children">børn</option>
                     </select>
                     </div>

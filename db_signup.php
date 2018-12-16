@@ -11,7 +11,8 @@ if(isset($_POST['signup'])){
     $user_role = $_POST['user_role'];
     $family_status = $_POST['family_status'];
     $phone_number = $_POST['phone_number'];
-    $family_name = $_POST['family_name'];
+    $join_family = isset($_POST['join_family']) ? $_POST['join_family'] : '';
+    $family_name = !empty($_POST['family_name']) ? $_POST['family_name'] : $join_family;
     $email= $_POST['email'];
 
     // attempt insert query execution

@@ -2,7 +2,10 @@
 require_once 'DatabaseConnection.php';
 session_start();
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
-$sql = "SELECT id, title, start, end, color FROM events";
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
+$family_name=isset($_SESSION['family_name']) ? $_SESSION['family_name'] : '';
+$user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : '';
+$sql = "SELECT id, title, start, end, color FROM events WHERE family_name = '$family_name'";
 $req = $DBcon->prepare($sql);
 $req->execute();
 $events = $req->fetchAll();
@@ -81,11 +84,8 @@ $events = $req->fetchAll();
 								<ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
-                    <?php
-echo $user;
-?>
+                    <?php echo $user; ?>
                     <span class="glyphicon glyphicon-log-in"></span>
-
                 </a>
                 <ul class="dropdown-menu">
                     <li><a href="logout.php">Log ud</a></li>
@@ -330,7 +330,7 @@ echo $user;
 
 				$('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD'));
 				$('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD'));
-				<?php if ($_SESSION['user'] === 'admin') {?>
+				<?php if ($user_role === 'parent') {?>
 					$('#ModalAdd').modal('show');
 				<?php }?>
 			},
@@ -339,7 +339,7 @@ echo $user;
 					$('#ModalEdit #id').val(event.id);
 					$('#ModalEdit #title').val(event.title);
 					$('#ModalEdit #color').val(event.color);
-					<?php if ($_SESSION['user'] === 'admin') {?>
+					<?php if ($user_role === 'parent') {?>
 					$('#ModalEdit').modal('show');
 				<?php }?>
 				});

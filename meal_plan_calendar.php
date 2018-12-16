@@ -2,7 +2,10 @@
 require_once 'DatabaseConnection.php';
 session_start();
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
-$sql = "SELECT id, title, start, end, color FROM tbl_mealplan";
+$user_id = isset($_SESSION['user_id']) ? $_SESSION['user_id'] : '';
+$family_name=isset($_SESSION['family_name']) ? $_SESSION['family_name'] : '';
+$user_role = isset($_SESSION['user_role']) ? $_SESSION['user_role'] : '';
+$sql = "SELECT id, title, start, end, color FROM tbl_mealplan WHERE family_name = '$family_name'";
 $req = $DBcon->prepare($sql);
 $req->execute();
 $events = $req->fetchAll();
@@ -312,7 +315,7 @@ $events = $req->fetchAll();
 
 				$('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD'));
 				$('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD'));
-				<?php if ($_SESSION['user'] === 'admin') {?>
+				<?php if ($user_role === 'parent') {?>
 					$('#ModalAdd').modal('show');
 				<?php }?>
 			},
@@ -321,7 +324,7 @@ $events = $req->fetchAll();
 					$('#ModalEdit #id').val(event.id);
 					$('#ModalEdit #title').val(event.title);
 					$('#ModalEdit #color').val(event.color);
-					<?php if ($_SESSION['user'] === 'admin') {?>
+					<?php if ($user_role === 'parent') {?>
 					$('#ModalEdit').modal('show');
 				<?php }?>
 				});
