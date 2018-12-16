@@ -62,10 +62,10 @@ $events = $req->fetchAll();
                         <a href="user_profile.php">Profil</a>
 										</li>
 										<li>
-                        <a href="calendar_dashboard.php">Event kalender</a>
+                        <a href="events_calendar.php">Event kalender</a>
 										</li>
 										<li>
-                        <a href="calendar_dashboard.php">Chores Kalender</a>
+                        <a href="chores_calendar.php">Chores Kalender</a>
                     </li>
                 </ul>
 
@@ -147,13 +147,13 @@ $events = $req->fetchAll();
 				  <div class="form-group">
 					<label for="start" class="col-sm-2 control-label">Start dato</label>
 					<div class="col-sm-10">
-					  <input type="date" name="start" class="form-control" id="start">
+					  <input type="text" name="start" class="form-control" id="start">
 					</div>
 				  </div>
 				  <div class="form-group">
 					<label for="end" class="col-sm-2 control-label">Slutdato</label>
 					<div class="col-sm-10">
-					  <input type="date" name="end" class="form-control" id="end">
+					  <input type="text" name="end" class="form-control" id="end">
 					</div>
 				  </div>
 
@@ -275,15 +275,6 @@ $events = $req->fetchAll();
 		Lorem ipsum dolor sit amet, consectateur adispicing elit. Fusce euismod convallis velit, eu auctor lacus vehicula sit amet.
 	</p>
 
-	<div class="footer-icons">
-
-		<a href="#"><i class="fa fa-facebook"></i></a>
-		<a href="#"><i class="fa fa-twitter"></i></a>
-		<a href="#"><i class="fa fa-linkedin"></i></a>
-		<a href="#"><i class="fa fa-github"></i></a>
-
-	</div>
-
 </div>
 
     <!-- jQuery Version 1.11.1 -->
@@ -308,6 +299,10 @@ $events = $req->fetchAll();
 				center: 'title',
 				right: 'month,basicWeek,basicDay'
 			},
+			monthNames: ['januar','februar','marts','april','maj','juni','juli','august','september','oktober','november','december'],
+      // monthNamesShort: ['Ene','Feb','Mar','Abr','May','Jun','Jul','Ago','Sep','Oct','Nov','Dic'],
+			dayNames: ['mandag','tirsdag','onsdag','torsdag','fredag','lørdag','søndag'],
+			dayNamesShort: ['man','tir','ons','tor','fre','lør','søn'],
 			defaultDate: utc,
 			editable: true,
 			eventLimit: true, // allow "more" link when too many events
@@ -315,8 +310,8 @@ $events = $req->fetchAll();
 			selectHelper: true,
 			select: function(start, end) {
 
-				$('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD HH:mm:ss'));
-				$('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD HH:mm:ss'));
+				$('#ModalAdd #start').val(moment(start).format('YYYY-MM-DD'));
+				$('#ModalAdd #end').val(moment(end).format('YYYY-MM-DD'));
 				<?php if ($_SESSION['user'] === 'admin') {?>
 					$('#ModalAdd').modal('show');
 				<?php }?>
@@ -369,9 +364,9 @@ $events = $req->fetchAll();
 		});
 
 		function edit(event){
-			start = event.start.format('YYYY-MM-DD HH:mm:ss');
+			start = event.start.format('YYYY-MM-DD');
 			if(event.end){
-				end = event.end.format('YYYY-MM-DD HH:mm:ss');
+				end = event.end.format('YYYY-MM-DD');
 			}else{
 				end = start;
 			}

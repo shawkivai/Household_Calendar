@@ -2,7 +2,7 @@
 require_once 'DatabaseConnection.php';
 session_start();
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
-$sql = "SELECT id, title, start, end, color FROM tbl_chores";
+$sql = "SELECT id, title, start, end, color FROM events";
 $req = $DBcon->prepare($sql);
 $req->execute();
 $events = $req->fetchAll();
@@ -16,13 +16,14 @@ $events = $req->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Husholdningschef</title>
+    <title>Arrangementskalender</title>
     <!-- Bootstrap Core CSS -->
 		<link rel="stylesheet" href="css/footer-distributed-with-address-and-phones.css">
-		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
 	<!-- FullCalendar -->
 		<link href='css/fullcalendar.css' rel='stylesheet' />
+		<link href='css/footer.css' rel='stylesheet' />
     <!-- Custom CSS -->
     <style>
     body {
@@ -60,23 +61,29 @@ $events = $req->fetchAll();
                 <ul class="nav navbar-nav">
                     <li>
                         <a href="user_profile.php">Profil</a>
-					</li>
-					<li>
-                        <a href="events_calendar.php">Event kalender</a>
-					</li>
-					<li>
+										</li>
+										<li>
+                        <a href="calendar_dashboard.php">Event kalender</a>
+										</li>
+										<li>
                         <a href="meal_plan_calendar.php">Målplan Kalender</a>
-					</li>
+										</li>
+										<li>
+                        <a href="chores_calendar.php">Chores Kalender</a>
+                    </li>
+										<li>
+                        <a href="shopping_list.php">Shopping list</a>
+                    </li>
                 </ul>
 
 
 
-		<ul class="nav navbar-nav navbar-right">
+								<ul class="nav navbar-nav navbar-right">
             <li class="dropdown">
                 <a class="dropdown-toggle" data-toggle="dropdown" href="#">
                     <?php
-											echo $user;
-										?>
+echo $user;
+?>
                     <span class="glyphicon glyphicon-log-in"></span>
 
                 </a>
@@ -97,11 +104,11 @@ $events = $req->fetchAll();
 
         <div class="row">
             <div class="col-lg-12 text-center">
-								<h1>Chores Kalender for husholdningen</h1>
+								<h1>Arrangementskalender for husholdning</h1>
 								<?php if ($_SESSION['user'] === 'admin') {?>
-									<p class="lead">Du kan oprette Chores, administrere Chores og slette Chores</p>
+									<p class="lead">Du kan oprette begivenheder, administrere begivenheder og slette begivenheder</p>
 								<?php } else {?>
-									<p>Familiemedlemmer kan kun se chores</p>
+									<p>Familiemedlemmer kan kun se begivenhederne</p>
 								<?php }?>
                 <div id="calendar" class="col-centered">
                 </div>
@@ -114,15 +121,15 @@ $events = $req->fetchAll();
 		<div class="modal fade" id="ModalAdd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
-			<form class="form-horizontal" method="POST" action="service/addChores.php">
+			<form class="form-horizontal" method="POST" action="service/addEvent.php">
 
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Tilføj Chores</h4>
+				<h4 class="modal-title" id="myModalLabel">Tilføj begivenhed</h4>
 			  </div>
 			  <div class="modal-body">
 
-                    <div class="form-group">
+				  <div class="form-group">
 					<label for="title" class="col-sm-2 control-label">Titel</label>
 					<div class="col-sm-10">
 					  <input type="text" name="title" class="form-control" id="title" placeholder="Titel">
@@ -169,15 +176,14 @@ $events = $req->fetchAll();
 
 
 
-
 		<!-- Modal -->
 		<div class="modal fade" id="ModalEdit" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 		  <div class="modal-dialog" role="document">
 			<div class="modal-content">
-			<form class="form-horizontal" method="POST" action="service/editChoresTitle.php">
+			<form class="form-horizontal" method="POST" action="service/editEventTitle.php">
 			  <div class="modal-header">
 				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-				<h4 class="modal-title" id="myModalLabel">Rediger Chores</h4>
+				<h4 class="modal-title" id="myModalLabel">Rediger begivenhed</h4>
 			  </div>
 			  <div class="modal-body">
 
@@ -223,7 +229,6 @@ $events = $req->fetchAll();
 			</div>
 		  </div>
 		</div>
-
     </div>
     <!-- /.container -->
 
@@ -288,6 +293,7 @@ $events = $req->fetchAll();
 </div>
 
 </footer>
+
     <!-- jQuery Version 1.11.1 -->
     <script src="js/jquery.js"></script>
 
@@ -297,6 +303,7 @@ $events = $req->fetchAll();
 	<!-- FullCalendar -->
 	<script src='js/moment.min.js'></script>
 	<script src='js/fullcalendar.min.js'></script>
+	<script src='js/locale/da.js'></script>
 
 	<script>
 
@@ -363,14 +370,14 @@ $events = $req->fetchAll();
         $end = $event['end'];
     }
     ?>
-					{
-						id: '<?php echo $event['id']; ?>',
-						title: '<?php echo $event['title']; ?>',
-						start: '<?php echo $start; ?>',
-						end: '<?php echo $end; ?>',
-						color: '<?php echo $event['color']; ?>',
-					},
-				<?php endforeach;?>
+											{
+												id: '<?php echo $event['id']; ?>',
+												title: '<?php echo $event['title']; ?>',
+												start: '<?php echo $start; ?>',
+												end: '<?php echo $end; ?>',
+												color: '<?php echo $event['color']; ?>',
+											},
+										<?php endforeach;?>
 			]
 		});
 
@@ -390,7 +397,7 @@ $events = $req->fetchAll();
 			Event[2] = end;
 
 			$.ajax({
-			 url: 'service/editChoresDate.php',
+			 url: 'service/editEventDate.php',
 			 type: "POST",
 			 data: {Event:Event},
 			 success: function(rep) {

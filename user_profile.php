@@ -2,6 +2,7 @@
 require_once 'DatabaseConnection.php';
 require_once 'edit_profile.php';
 $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
+$profile_image = isset($result['image']) && !empty($result['image']) ? $result['image'] : 'http://ssl.gstatic.com/accounts/ui/avatar_2x.png';
 ?>
 <!DOCTYPE html>
 <html>
@@ -78,7 +79,7 @@ $user = isset($_SESSION['user']) ? $_SESSION['user'] : '';
   		    <div class="col-sm-3"><!--left col-->
                 <form class="form" action="update_profile.php" method="POST" id="registrationForm" enctype="multipart/form-data">
                     <div class="text-center">
-                    <img src="http://ssl.gstatic.com/accounts/ui/avatar_2x.png" class="avatar img-circle img-thumbnail" alt="avatar" id="profile_avatar">
+                    <img src="<?php echo $profile_image; ?>" class="avatar img-circle img-thumbnail" alt="avatar" id="profile_avatar">
                     <h6>Upload et billede...</h6>
                     <input type="file" name = "image" class="text-center center-block file-upload" onchange="readURL(this);">
                     </div><hr><br>

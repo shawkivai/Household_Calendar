@@ -21,14 +21,18 @@
         </div>
         <ul class="nav navbar-nav">
             <li class="active"><a href="#">Hjem</a></li>
-            <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Page 1-1</a></li>
-                    <li><a href="#">Page 1-2</a></li>
-                    <li><a href="#">Page 1-3</a></li>
-                </ul>
+            <li>
+                <a href="events_calendar.php">Event kalender</a>
+			</li>
+			<li>
+                <a href="meal_plan_calendar.php">Målplan Kalender</a>
+			</li>
+		    <li>
+                <a href="chores_calendar.php">Chores Kalender</a>
             </li>
-            <li><a href="#">Page 2</a></li> -->
+			<li>
+                <a href="shopping_list.php">Shopping list</a>
+            </li>
         </ul>
         <ul class="nav navbar-nav navbar-right">
             <li><a href="login.php"><span class="glyphicon glyphicon-log-in"></span>Log på</a></li>
@@ -43,24 +47,25 @@
     <!-- <img class="profile-img-card" src="//lh3.googleusercontent.com/-6V8xOA6M7BA/AAAAAAAAAAI/AAAAAAAAAAA/rzlHcD0KYwo/photo.jpg?sz=120" alt="" /> -->
 
     <div class="row signup_form">
-    <form class="form-horizontal" action="shopping_list.php" method="post">
+        <form class="form-horizontal" action="shopping_list.php" method="post">
 
-        <div class="form-group">
-            <label class="control-label col-sm-4">Recepie Name</label>
-            <div class="col-sm-4">
-                <input type="text" class="form-control" placeholder="Recepie name" name="recepie_name" required>
+            <div class="form-group">
+                <label class="control-label col-sm-4">Recepie Name</label>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control" placeholder="Recepie name" name="recepie_name" required>
+                </div>
             </div>
-        </div>
 
-        <div class="form-group">
-            <div class="col-sm-offset-4 col-sm-4">
-                <button type="submit" class="btn btn-info" name="submit">done</button>
+            <div class="form-group">
+                <div class="col-sm-offset-4 col-sm-4">
+                    <button type="submit" class="btn btn-info" name="submit">done</button>
+                </div>
             </div>
-        </div>
-    </form>
+        </form>
+    </div>
 
     <?php
-if(isset($_POST['submit'])){
+        if(isset($_POST['submit'])){
         $recepie_name = $_POST['recepie_name'];
 
         $siteUrl = 'https://www.norsmor.dk/'.$recepie_name.'/';
@@ -79,7 +84,7 @@ if(isset($_POST['submit'])){
         $title = $siteInformation['hybridGraph']['title'];
         $description =  $siteInformation['hybridGraph']['description'] ;
         $logo = $siteInformation['hybridGraph']['image'] ;
-?>
+        ?>
 		<div class="row">
 			<div class="col-md-6 list-item">
 				<img src="<?php echo $logo ?>" alt="" class="img-fluid" height="250px" width="350px" style="padding-left:100px"/>
@@ -87,8 +92,9 @@ if(isset($_POST['submit'])){
 				<p class=""><?php echo $description ?></p>
 				<!-- <a href="#" class="text-capitalize">Read more <span class="fas fa-long-arrow-alt-right"></span></a> -->
 			</div>
-	
 		</div>
-<?php } ?>
+        <?php } ?>
+    </div>
+    
 </body>
 </html>
